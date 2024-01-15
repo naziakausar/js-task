@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Password</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Validation</h1>
+      <p>Try to Submit this field</p>
+      <form>
+        <lable for="username">Username</lable>
+        <input type="text" id="Username" name="username" required />
+        <br />
+        <br />
+
+        <lable for="psw">Password</lable>
+        <input
+          type="text"
+          id="Password"
+          name="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+          required
+        />
+        <br />
+        <br />
+        <input type="text" id="Submit" value="submit" />
+      </form>
+    </div>
+    <div id="message">
+      <h3>Password must be contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="upercase" class="invalid">A <b>upercase</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b> number</p>
+      <p id="length" class="invalid">A <b>Minimum</b>8 characters</p>
+    </div>
+    <script src="./task6.js"></script>
+  </body>
+</html>
