@@ -1,35 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .container{width: 100%;
-      height: 50vh;
-      background-color: brown;
-    display: flex;
-  flex-direction: column;
-justify-content: center;
-align-items: center;
-/* padding: 50px; */
-/* margin: 100px; */
-
-}
-.container2{width: 500px;
-height: 300px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding-left: 100px;
-text-align: center;
-background-color: green;}
-    </style>
-    <script src="./task1.js"></script> 
-</head>
- <body>
-<!-- <div class="container">
+    <link rel="stylesheet" href="./popuptask.css">
+    
+    <script src="./task1.js"></script>
+  </head>
+  <body>
+    <!-- <div class="container">
   <button onclick="openPopup()">Submit</button>
 
 
@@ -48,27 +28,28 @@ background-color: green;}
   </form>
 
 </div> -->
-     <div class="container">
-    <button onclick="handlePopup()" >Click Now</button><br><br>
-
-    <form action="" id="popupVal">
-      <label for="text">Name</label>
-      <input type="text"> <br><br>
-      <label for="text">Math Marks</label>
-      <input type="text"> <br><br>
-      <label for="text">English</label>
-      <input type="text"> <br><br>
-      <label for="text">Urdu</label>
-      <input type="text" >
-      <button type="button" onclick="showResult()">Close</button>
-     
-
-    </form>
-  
-  </div> 
+    <button onclick="openPopup()" class="btn">Click Now</button >
+    <div  id="popupVal">
+      <form action="" >
+        <label for="text" class="table">Name</label>
+        <input type="text" class="table" /> <br /><br />
+        <label for="text" class="table" >Math </label>
+        <input type="text"  class="table" /> <br /><br />
+       
+        <label for="text" class="table" >Urdu</label>
+        <input type="text" class="table"  /><br /><br />
+        <label for="text" class="table" >Physics</label>
+        <input type="text" class="table" /> <br /><br />
+        <label for="text" class="table" >English</label>
+        <input type="text"  class="table" /> <br /><br />
+        <label for="text" class="table" >Biology</label>
+        <input type="text" class="table"  /> <br />
+        
+        <br /><br />
+        <button type="button" onclick="hideResult()" class="btn1">Save</button>
+      </form>
+    </div>
     <!-- <button onclick="myfunction()">click</button> -->
-   <!-- <p id="myid">New text</p>  -->
-  
-
-</body>
+    <!-- <p id="myid">New text</p>  -->
+  </body>
 </html>

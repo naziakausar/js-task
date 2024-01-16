@@ -4,10 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+       .label{display: flex;
+      flex-direction: row;
+      gap: 10px;
+    } 
+    #popupVal{display: none;}
+    </style>
   </head>
   <body>
-    <img src="burger2.png" alt="" id="image" />
-    <button onclick="changeimage()">Click Now</button>
+    <button onclick="openPopup()">Click Now</button>
+    <div id="popupVal">
+      <form action="">
+        <label for="" class="label">Name</label>
+        <input type="text" class="label">
+        <label for="" class="label"> Marks</label>
+        <input type="text" class="label">
+        <label for="" class="label">English</label>
+        <input type="text" class="label">
+        <label for="" class="label">Urdu</label>
+        <input type="text" class="label">
+        <button onclick="hidePopup()">close</button>
+      </form>
+    </div>
+
+
+    <!-- <img src="burger2.png" alt="" id="image" />
+    <button onclick="changeimage()">Click Now</button> -->
 
     <script src="./task2.js"></script>
   </body>

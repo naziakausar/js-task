@@ -7,20 +7,39 @@
 //   }
 // }
 
-// var form =document.getElementById('popupVal')
-//   function handlePopup(){form.style.display ="block";}
-//   var form =document.getElementById('popupVal')
-//  function closePopup(){form.style.display ="none";}
- function handlePopup() {
-  var form = document.getElementById("popupVal");
-    if (form.style.display === "none") {
-     form.style.display = "block";
-    } else {
-    form.style.display = "none";
-    
-   }
+
+
+
+
+
+  function openPopup(){
+    const forms =document.getElementById('popupVal'); 
+
   
- }
+    // if(forms)
+    {forms.style.display ="flex";
+}
+
+}
+ function hideResult(){
+  
+  const forms =document.getElementById('popupVal'); 
+
+  // if(forms)
+  {forms.style.display ="none";}};
+const student =[];
+  // const student = {Name:"Ahmed",age:10,MathMarks:30,UrduMarks:40,PhysicsMarks:50,EnglishMarks,BioMarks};
+  
+  // function handlePopup() {
+//   var form = document.getElementById("popupVal");
+//     if (form.style.display === "none") {
+//      form.style.display = "block";
+//     } else {
+//     form.style.display = "none";
+    
+//    }
+  
+//  }
 // function showResult(){
 //   var form =
 //   document.getElementsByClassName("popupVal");
