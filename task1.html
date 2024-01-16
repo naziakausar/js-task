@@ -6,7 +6,8 @@
     <title>Document</title>
     <style>
       .container{width: 100%;
-      height: 200px;
+      height: 50vh;
+      background-color: brown;
     display: flex;
   flex-direction: column;
 justify-content: center;
@@ -15,12 +16,39 @@ align-items: center;
 /* margin: 100px; */
 
 }
+.container2{width: 500px;
+height: 300px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-left: 100px;
+text-align: center;
+background-color: green;}
     </style>
     <script src="./task1.js"></script> 
 </head>
  <body>
+<!-- <div class="container">
+  <button onclick="openPopup()">Submit</button>
 
-    <div class="container">
+
+  <form action="" id="popupVal">
+    <label for="text">Name</label>
+    <input type="text"> <br><br>
+    <label for="text">Math Marks</label>
+    <input type="text"> <br><br>
+    <label for="text">English</label>
+    <input type="text"> <br><br>
+    <label for="text">Urdu</label>
+    <input type="text" >
+    <button onclick="closePopup()">Close</button>
+   
+
+  </form>
+
+</div> -->
+     <div class="container">
     <button onclick="handlePopup()" >Click Now</button><br><br>
 
     <form action="" id="popupVal">
@@ -32,11 +60,12 @@ align-items: center;
       <input type="text"> <br><br>
       <label for="text">Urdu</label>
       <input type="text" >
-      <button onclick="showResult()">Save</button>
+      <button type="button" onclick="showResult()">Close</button>
      
 
     </form>
-  </div>
+  
+  </div> 
     <!-- <button onclick="myfunction()">click</button> -->
    <!-- <p id="myid">New text</p>  -->
   
