@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./popuptask.css">
     
-    <script src="./task1.js"></script>
+   
   </head>
   <body>
     <!-- <div class="container">
@@ -28,28 +28,32 @@
   </form>
 
 </div> -->
+
     <button onclick="openPopup()" class="btn">Click Now</button >
+      <div class="container">
     <div  id="popupVal">
-      <form action="" >
+      <form action="" id="form" >
         <label for="text" class="table">Name</label>
-        <input type="text" class="table" /> <br /><br />
-        <label for="text" class="table" >Math </label>
-        <input type="text"  class="table" /> <br /><br />
+        <input type="text" class="table" id="name" /> <br /><br />
+        <label for="" class="table" >Math </label>
+        <input type="number"  class="table" id="math" /> <br /><br />
        
         <label for="text" class="table" >Urdu</label>
-        <input type="text" class="table"  /><br /><br />
+        <input type="number" class="table" id="urdu" /><br /><br />
         <label for="text" class="table" >Physics</label>
-        <input type="text" class="table" /> <br /><br />
+        <input type="number" class="table" id="physics"/> <br /><br />
         <label for="text" class="table" >English</label>
-        <input type="text"  class="table" /> <br /><br />
-        <label for="text" class="table" >Biology</label>
-        <input type="text" class="table"  /> <br />
+        <input type="number"  class="table" id="English"/> <br /><br />
+        <label for="text" class="table"  >Biology</label>
+        <input type="number" class="table" id="biology" /> <br />
         
         <br /><br />
-        <button type="button" onclick="hideResult()" class="btn1">Save</button>
+        <button type="submit" class="btn1">Save</button>
       </form>
     </div>
+  </div>
     <!-- <button onclick="myfunction()">click</button> -->
     <!-- <p id="myid">New text</p>  -->
+    <script src="./task1.js"></script>
   </body>
 </html>
