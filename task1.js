@@ -28,32 +28,51 @@ const student = [];
 
   const form = document.getElementById("form");
   // console.log("form",form);
-
+  // form.addEventListener("submit", function (alert("data is not entered")))
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    //To Get the values of form fields
+  
     const nameValue = document.getElementById("name").value;
     const mathValue = document.getElementById("math").value;
     const urduValue = document.getElementById("urdu").value;
     const physicsValue = document.getElementById("physics").value;
     const biologyValue = document.getElementById("biology").value;
     const englishValue = document.getElementById("English").value;
-    const stdtobject={Name:nameValue,mathMarks:mathValue,urduMarks:urduValue,physicsMarks:physicsValue,biologyiMarks:biologyValue,englishMarks:englishValue};
-    student.push(stdtobject);
-    console.log(student);
-    hideResult();
   
-    
-    // Do something with the values (for example, log them)
-    // console.log("Name:", nameValue);
-    // console.log("Math:", mathValue);
-    // console.log("Urdu:", urduValue);
-    // console.log("Physics:", physicsValue);
-    // console.log("Biology:", biologyValue);
-    // console.log("English:", englishValue);
+    if (nameValue === "" || mathValue === "" || urduValue === "" || physicsValue === "" || biologyValue === "" || englishValue === "") {
+      alert("Please fill this field");
+    } else {
+      const stdtobject = {
+        Name: nameValue,
+        mathMarks: mathValue,
+        urduMarks: urduValue,
+        physicsMarks: physicsValue,
+        biologyMarks: biologyValue,
+        englishMarks: englishValue
+      };
+  
+      student.push(stdtobject);
+  
+      const mytable = document.getElementsByClassName("your-table-class")[0]; // Access the first element in the collection
+      console.log(mytable);
+  
+      const showtdata = student.map(item => (
+        `<tr>
+          <td>${item.Name}</td>
+          <td>${item.mathMarks}</td>
+          <td>${item.urduMarks}</td>
+          <td>${item.physicsMarks}</td>
+          <td>${item.biologyMarks}</td>
+          <td>${item.englishMarks}</td>
+        </tr>`
+      ));
+  
+      mytable.innerHTML = showtdata.join('');
+      hideResult();
+    }
   });
-
+  
+ 
 
 // function handlePopup() {
 //   var form = document.getElementById("popupVal");
@@ -75,3 +94,4 @@ const student = [];
 // }
 
 // }
+

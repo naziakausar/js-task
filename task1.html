@@ -30,9 +30,11 @@
 </div> -->
 
     <button onclick="openPopup()" class="btn">Click Now</button >
-      <div class="container">
-    <div  id="popupVal">
+      <div class="container"  id="popupVal" >
+    <div class="popupVal" >
+      <button type="button" onclick="hideResult()" class="close">Close</button>
       <form action="" id="form" >
+        
         <label for="text" class="table">Name</label>
         <input type="text" class="table" id="name" /> <br /><br />
         <label for="" class="table" >Math </label>
@@ -52,6 +54,62 @@
       </form>
     </div>
   </div>
+
+  <table border="1px " class="studentTable">
+    <thead>
+    <tr class="tableTitle">
+      <th class="tableInput">Name</th>
+      
+      <th class="tableInput" >English</th>
+      <th class="tableInput">Urdu</th>
+      <th class="tableInput">Math</th>
+      <th class="tableInput">Physics</th>
+      <th class="tableInput">Biology</th> 
+      <th class="tableInput">Total Marks</th>
+      <th class="tableInput">percentage</th>
+      <th class="tableInput">avarege</th>
+      <th class="tableInput">Option
+       (Edit/Delete)
+      </th>
+    </tr>
+  </thead>
+    <tbody class="your-table-class">
+
+    </tbody>
+   <!-- <tr>
+    <td>
+      <input type="number" class="tableInput" >
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput" >
+    </td>
+    <td>
+      <input type="number" class="tableInput" >
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+    <td>
+      <input type="number" class="tableInput">
+    </td>
+   </tr> -->
+   
+  </table>
     <!-- <button onclick="myfunction()">click</button> -->
     <!-- <p id="myid">New text</p>  -->
     <script src="./task1.js"></script>
