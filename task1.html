@@ -32,22 +32,23 @@
     <button onclick="openPopup()" class="btn">Click Now</button >
       <div class="container"  id="popupVal" >
     <div class="popupVal" >
+      <h3 class="formheading">Student Result Submission Form </h3>
       <button type="button" onclick="hideResult()" class="close">Close</button>
       <form action="" id="form" >
         
-        <label for="text" class="table">Name</label>
-        <input type="text" class="table" id="name" /> <br /><br />
+        <label for="text" class="table" >Name</label>
+        <input type="text"class="table" id="name"  /> <br /><br />
         <label for="" class="table" >Math </label>
-        <input type="number"  class="table" id="math" /> <br /><br />
+        <input type="number"  min="0" max="100"  class="table" id="math" /> <br /><br />
        
         <label for="text" class="table" >Urdu</label>
-        <input type="number" class="table" id="urdu" /><br /><br />
+        <input type="number"  min="0" max="100"  class="table" id="urdu" /><br /><br />
         <label for="text" class="table" >Physics</label>
         <input type="number" class="table" id="physics"/> <br /><br />
-        <label for="text" class="table" >English</label>
+        <label for="text"   min="0" max="100" class="table" >English</label>
         <input type="number"  class="table" id="English"/> <br /><br />
-        <label for="text" class="table"  >Biology</label>
-        <input type="number" class="table" id="biology" /> <br />
+        <label for="text"   min="0" max="100" class="table"  >Biology</label>
+        <input type="number"   min="0" max="100" class="table" id="biology" /> <br />
         
         <br /><br />
         <button type="submit" class="btn1">Save</button>
