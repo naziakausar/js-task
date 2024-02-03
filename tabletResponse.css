@@ -1,0 +1,12 @@
+.weatherCards{ grid-template-columns: 1fr 1fr; 
+row-gap:30px ;
+column-gap: 12px;}
+.footerHeading{font-size: 10px;}
+.AccuWeather{ font-size: 12px;}
+.mainfooterContainer{gap: 10px;}
+/* .card_innerText{font-size: 15px;}
+.card_innerText{font-size: 10px;} */
+@media screen and (min-width: 481px) and (max-width: 620px) {.weatherCards{ grid-template-columns: 1fr 1fr; 
+    row-gap:30px ;
+    column-gap: 12px;}}
+ 

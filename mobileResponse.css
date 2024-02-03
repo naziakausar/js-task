@@ -1,0 +1,10 @@
+.container{grid-template-columns: 1fr;
+    height: 100%;}
+    .weatherCards{ grid-template-columns: 1fr ; 
+        row-gap:30px ;
+        column-gap: 12px;}
+        .mainfooterContainer{
+            flex-direction: column;}
+            .AccuWeather{
+                font-size: 14px;}
+                .footerHeading{font-size: 13px;}

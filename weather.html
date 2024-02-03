@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API</title>
+    <link rel="stylesheet" href="./weather.css">
+    <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 768px)" href="./tabletResponse.css">
+    <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 480px)" href="./mobileResponse.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="item1">
+            <div class="input">
+                <input type="text" class="searchInput">
+                <img src="./search image.png" alt="" width="30px" height="30px" class="searchImage" onclick="searchVlue()">
+            </div>
+            <div class="sunImage">
+            <img src="./weather sun image.png" alt="" width="100px" height="80px">
+        </div>
+    <div class="tempDiv">
+           <p class="temprature">18&deg;<Span class="span">C</Span></p>
+           <p class="tempratureText">Hazy sunshine</p>
+        </div>
+        <div class="dateDiv">
+           <p class="January">31 January 2024</p>
+           <p class="Wednesday">Wednesday, 12:02 PM Day</p>
+        </div>
+        <h1 class="location">Tibba,Pakistan</h1>
+        </div>
+
+          
+        <div class="item2">
+            <div class="container2">
+                
+            <div class="TodayHeading">
+                <h1 class="today">Today</h1>
+                <h1 class="tomorrow">Tomorrow</h1>
+            </div>
+            <div class="weatherCards">
+            <!-- <div class="card1_Row"> -->
+            <div class="cards">
+                <h1 class="card_innerText1">Wind</h1>
+                <h1 class="card_innerText">4 KM/h</h1>
+                <h1 class="card_innerText1">SSE</h1> 
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Humidity</h1>
+                <h1 class="card_innerText">67%</h1>
+               
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Real Feel</h1>
+                <h1 class="card_innerText">22%</h1>
+              
+            </div>
+        <!-- </div> -->
+        <!-- <div class="card1_Row"> -->
+            <div class="cards">
+                <h1 class="card_innerText1">UV Index</h1>
+                <h1 class="card_innerText">4 </h1>
+                <h1 class="card_innerText1">Moderate</h1> 
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Pressure</h1>
+                <h1 class="card_innerText">1014 mbbar</h1>
+                <h1 class="card_innerText1">Falling</h1> 
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Change of rain</h1>
+                <h1 class="card_innerText">3%</h1>
+                <h1 class="card_innerText1">Day</h1>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="card1_Row"> -->
+            <div class="cards">
+                <h1 class="card_innerText1">Temprature History</h1>
+                <h1 class="card_innerText">20&deg;C</h1>
+                <h1 class="card_innerText1">8&deg;C</h1> 
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Sun</h1>
+                <h1 class="card_innerText"><span>Rise</span> 07:04 AM </h1>
+                <h1 class="card_innerText1"><span>Set</span> 05:48 AM </h1>
+            </div>
+            <div class="cards">
+                <h1 class="card_innerText1">Moon</h1>
+                <h1 class="card_innerText"><span>Rise</span> 10:47 PM</h1>
+                <h1 class="card_innerText1"><span>Set</span> 10:29 AM </h1>
+            </div>
+        <!-- </div> -->
+    </div>
+<div class="mainfooterContainer">
+            <div class="footerData">
+                <h1 class="footerHeading">All Data Provided By-</h1>
+                <h1 class="AccuWeather">AccuWeather</h1>
+            </div>
+
+            <div class="footerData2">
+                  <h1 class="footerHeading">Design & Developed By-</h1>
+                <h1  class="AccuWeather">Md. Minhazul Islam </h1>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+<script>
+    const apiKey="09d0ebff76b27cf1b1b91c100d44b010"
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=matric&q=";
+
+    const searchBox= document.querySelector(".input input");
+    const searchBtn= document.querySelector(".searchImage button");
+    async function checkweather(city){
+        const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
+        var data = await response.json();
+        console.log(data);
+        document.querySelector(".location").innerHTML = data.name;
+        document.querySelector(".temprature").innerHTML = Math.round(data.main.temp ) +"&deg;C";
+        document.querySelector(".card_innerText1").innerHTML = data.main.humidity +"%";
+        document.querySelector(".card_innerText1").innerHTML = data.wind.speed +" km/h";
+    }
+   
+    function searchVlue(){
+        checkweather(searchBox.value);
+    };
+    
+</script>
+    
+</body>
+</html>
