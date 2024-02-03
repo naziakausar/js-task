@@ -117,14 +117,26 @@
 
     const searchBox= document.querySelector(".input input");
     const searchBtn= document.querySelector(".searchImage button");
+    const sunImage = document.querySelector(".sunImage");
     async function checkweather(city){
         const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
         var data = await response.json();
         console.log(data);
         document.querySelector(".location").innerHTML = data.name;
-        document.querySelector(".temprature").innerHTML = Math.round(data.main.temp ) +"&deg;C";
+        document.querySelector(".temprature").innerHTML = Math.round(data.main.temp ) +"&deg;F";
         document.querySelector(".card_innerText1").innerHTML = data.main.humidity +"%";
         document.querySelector(".card_innerText1").innerHTML = data.wind.speed +" km/h";
+        if (data.weather[0].main=="cloud"){
+            sunImage.src="images/clouds.jpg";
+        }
+        else 
+        if (data.weather[0].main=="rain"){
+            sunImage.src="images/rain.jpg";
+        } 
+        else 
+        if (data.weather[0].main=="mist"){
+            sunImage.src="images/mist.jpg";
+        } 
     }
    
     function searchVlue(){
