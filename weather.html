@@ -20,8 +20,11 @@
                 <input type="text" class="searchInput">
                 <img src="./search image.png" alt="" width="30px" height="30px" class="searchImage" onclick="searchVlue()">
             </div>
-            <div class="sunImage">
-            <img src="./weather sun image.png" alt="" width="100px" height="80px">
+            <div class="error">
+                <p>Invalid city name</p>
+            </div>
+            <div class="sunImage1">
+            <img src="./weather sun image.png" alt="" width="100px" height="80px"class="sunImage" >
         </div>
     <div class="tempDiv">
            <p class="temprature">18&deg;<Span class="span">C</Span></p>
@@ -51,7 +54,7 @@
             </div>
             <div class="cards">
                 <h1 class="card_innerText1">Humidity</h1>
-                <h1 class="card_innerText">67%</h1>
+                <h1 class="card_innerText2">67%</h1>
                
             </div>
             <div class="cards">
@@ -103,7 +106,7 @@
 
             <div class="footerData2">
                   <h1 class="footerHeading">Design & Developed By-</h1>
-                <h1  class="AccuWeather">Md. Minhazul Islam </h1>
+                <h1  class="AccuWeather">Nazia Kausar</h1>
             </div>
         </div>
         </div>
@@ -113,34 +116,72 @@
 
 <script>
     const apiKey="09d0ebff76b27cf1b1b91c100d44b010"
-    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=matric&q=";
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
     const searchBox= document.querySelector(".input input");
     const searchBtn= document.querySelector(".searchImage button");
     const sunImage = document.querySelector(".sunImage");
-    async function checkweather(city){
+    const error= document.querySelector('.error')
+    // console.log("==",document.querySelector(".card_innerText"));
+
+    async function checkWeather(city){
         const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
         var data = await response.json();
-        console.log(data);
-        document.querySelector(".location").innerHTML = data.name;
-        document.querySelector(".temprature").innerHTML = Math.round(data.main.temp ) +"&deg;F";
-        document.querySelector(".card_innerText1").innerHTML = data.main.humidity +"%";
-        document.querySelector(".card_innerText1").innerHTML = data.wind.speed +" km/h";
-        if (data.weather[0].main=="cloud"){
-            sunImage.src="images/clouds.jpg";
+      console.log("==",data);
+
+        if(data.cod===`404`){
+            error.style.display="flex";
+            console.log('error')
+            return;
         }
-        else 
-        if (data.weather[0].main=="rain"){
-            sunImage.src="images/rain.jpg";
-        } 
-        else 
-        if (data.weather[0].main=="mist"){
-            sunImage.src="images/mist.jpg";
-        } 
-    }
+        error.style.display="none";
+       
+        document.querySelector(".location").innerHTML = data.name;
+        document.querySelector(".temprature").innerHTML = Math.round(data.main.temp ) +"&deg;C";
+        document.querySelector(".card_innerText2").innerHTML = data.main.humidity +"%";
+       
+        document.querySelector(".card_innerText").innerHTML = Math.round(data.wind.speed) +" km/h";
+        const timestamp = data.dt;
+      const date= new Date(timestamp*1000)// Convert timestamp to milliseconds
+         const formattedDate= date.toLocaleString();
+        //  const formattedDate = date.toLocaleString(); // Format date and time
+        document.querySelector(".January").innerHTML = formattedDate;
+        const dayOfWeek=date.toLocaleDateString('en-US',{weekday:'long'});// Extract day of the week
+       document.querySelector(".Wednesday").innerHTML = dayOfWeek;
+       
+        // console.log("++",document.querySelector(".card_innerText"));
+       switch (data.weather[0].main.toLowerCase()){
+        case'clouds':
+        sunImage.src="./clouds.jpg";
+        break;
+        case'rain':
+        sunImage.src="./rain.jpg";
+        break;
+        case'mist':
+        sunImage.src="./mist.jpg";
+        break;
+        case'haze':
+        sunImage.src="./haze.png";
+        break;
+        default:
+            sunImage.src = "./weather sun image.png"; // Default image if weather condition not recognized
+            break;
+       } }
+    //     if (data.weather[0].main.toLowerCase()==="cloud"){
+    //         sunImage.src="./clouds.jpg";
+    //     }
+    //     else 
+    //     if (data.weather[0].main.toLowerCase()==="rain"){
+    //         sunImage.src="./rain.jpg";
+    //     } 
+    //     else 
+    //     if (data.weather[0].main.toLowerCase()==="mist"){
+    //         sunImage.src="./mist.jpg";
+    //     } 
+    // }
    
     function searchVlue(){
-        checkweather(searchBox.value);
+        checkWeather(searchBox.value);
     };
     
 </script>
